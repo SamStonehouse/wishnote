@@ -1,14 +1,12 @@
-import WishlistItem from '../wishlist-item-model';
+import { Model } from 'backbone';
 
-import GigRenderer from '../gig.jsx';
-
-class Gig extends WishlistItem {
+class Gig extends Model {
 	defaults() {
 		return {
-			artist: '',
-			cost: 0,
-			type: 'gig',
-			renderer: GigRenderer
+			artist: 'Not specified',
+			cost: 0
 		}
 	}
 }
+
+export default Gig;

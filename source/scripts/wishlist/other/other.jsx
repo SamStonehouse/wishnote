@@ -1,7 +1,6 @@
-import '!style!css!sass!./gig.sass';
 import React from 'react';
 
-class Gig extends React.Component {
+class Other extends React.Component {
 	render() {
 		return (
 			<div className={ 'other ' + this.props.className } >
@@ -11,12 +10,12 @@ class Gig extends React.Component {
 	}
 }
 
-Gig.defaultProps = {
+Other.defaultProps = {
 	className: ''
 };
 
-Gig.propTypes = {
+Other.propTypes = {
 	className: React.PropTypes.string
 };
 
-export default Gig;
+export default Other;

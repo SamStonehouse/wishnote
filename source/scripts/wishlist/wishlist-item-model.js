@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-import OtherRenderer from './other.jsx';
+import OtherRenderer from './other/other.jsx';
 
 class WishlistItem extends Backbone.Model {
 	defaults() {
@@ -8,7 +8,7 @@ class WishlistItem extends Backbone.Model {
 			type: '',
 			test: 'Wishlist item test',
 			renderer: OtherRenderer
-		}
+		};
 	}
 }
 

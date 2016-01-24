@@ -12,3 +12,5 @@ class Album extends WishlistItem {
 		}
 	}
 }
+
+export default Album;

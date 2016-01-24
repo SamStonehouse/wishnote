@@ -1,11 +1,12 @@
-import Backbone from 'Backbone';
+import { Collection } from 'Backbone';
 
-import WishlistItem from './wishlist-item-model';
+import GigModel from './gig/gig-model.js';
 
-class Wishlist extends Backbone.Collection {
+class Wishlist extends Collection {
 	constructor(options) {
 		super(options);
-
-		this.model = WishlistItem;
+		this.model = GigModel;
 	}
 }
+
+export default Wishlist;
