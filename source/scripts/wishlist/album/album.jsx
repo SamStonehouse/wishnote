@@ -5,14 +5,14 @@ class Album extends React.Component {
 	render() {
 		return (
 			<div className={ 'album ' + this.props.className } >
-				{ this.props.album.get('name') }
+				{ this.props.model.get('artist') }
 			</div>
 		);
 	}
 }
 
 Album.defaultProps = {
-	album: {
+	model: {
 		get: function() {
 			return 'default album';
 		}
@@ -21,7 +21,7 @@ Album.defaultProps = {
 };
 
 Album.propTypes = {
-	album: React.PropTypes.any,
+	model: React.PropTypes.any,
 	className: React.PropTypes.string
 };
 

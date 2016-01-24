@@ -5,14 +5,14 @@ class Gig extends React.Component {
 	render() {
 		return (
 			<div className={ 'gig ' + this.props.className } >
-				{ this.props.gig.get('name') }
+				{ this.props.model.get('artist') }
 			</div>
 		);
 	}
 }
 
 Gig.defaultProps = {
-	gig: {
+	model: {
 		get: function() {
 			return 'default gig';
 		}
@@ -21,7 +21,7 @@ Gig.defaultProps = {
 };
 
 Gig.propTypes = {
-	gig: React.PropTypes.any,
+	model: React.PropTypes.any,
 	className: React.PropTypes.string
 };
 

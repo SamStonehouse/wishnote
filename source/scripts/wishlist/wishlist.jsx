@@ -16,12 +16,12 @@ class Wishlist extends React.Component {
 	renderListItems() {
 		let listItems = [];
 
-		for (let i in this.props.list.models) {
-			if (this.props.list.models.hasOwnProperty(i)) {
-				console.log(this.props.list.models[i].get('type'));
-				listItems.push(this.props.list.models[i].renderer);
-			}
-		}
+		this.props.list.each(function(wish, i) {
+			let Renderer = wish.get('renderer');
+			listItems.push(
+				<Renderer key={i} model={ wish } />
+			);
+		});
 
 		return listItems;
 	}

@@ -9,7 +9,7 @@ class Album extends WishlistItem {
 			cost: 0,
 			type: 'album',
 			renderer: AlbumRenderer
-		}
+		};
 	}
 }
 
