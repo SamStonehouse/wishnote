@@ -9,6 +9,7 @@
   "author": "Sam Stonehouse",
   "license": "MIT",
   "dependencies": {
+    "backbone": "^1.2.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
