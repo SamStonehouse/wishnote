@@ -3,8 +3,18 @@ import '!style!css!sass!./wishlist.sass';
 import React from 'react';
 
 import WishlistCollection from './wishlist-model';
+import BackboneReact from '../utils/backbone-react';
 
-class Wishlist extends React.Component {
+class Wishlist extends BackboneReact {
+
+	constructor(props) {
+		super(props);
+	}
+
+	getBackboneCollections() {
+		return [this.props.list];
+	}
+
 	render() {
 		return (
 			<div className='wishlist'>
@@ -32,7 +42,8 @@ Wishlist.defaultProps = {
 };
 
 Wishlist.propTypes = {
-	list: React.PropTypes.any
+	list: React.PropTypes.instanceOf(WishlistCollection)
 };
 
 export default Wishlist;
+
