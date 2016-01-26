@@ -1,16 +1,19 @@
-import WishlistItem from '../wishlist-item-model.js';
+import WishlistItem from '../wishlist-item-model';
 
 import GigRenderer from './gig.jsx';
 
 class Gig extends WishlistItem {
 	defaults() {
+		console.log(this);
 		return {
 			artist: 'Not specified',
 			cost: 0,
-			type: 'gig',
-			renderer: GigRenderer
+			renderer: GigRenderer,
+			type: Gig.type
 		};
 	}
 }
+
+Gig.type = 'Gig';
 
 export default Gig;

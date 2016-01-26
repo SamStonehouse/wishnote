@@ -15,7 +15,7 @@ class App extends React.Component {
 			<div className='app'>
 				<Wishlist list={ wishes } />
 				<AddAlbum list={ wishes } onAdd={ this.addItem } />
-				<AddGig list={ wishes } onAdd={ this.addGig } />
+				<AddGig list={ wishes } onAdd={ this.addItem } />
 			</div>
 		);
 	}

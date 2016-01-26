@@ -5,12 +5,14 @@ import AlbumRenderer from './album.jsx';
 class Album extends WishlistItem {
 	defaults() {
 		return {
-			artist: '',
+			artist: 'Not specified',
 			cost: 0,
-			type: 'album',
-			renderer: AlbumRenderer
+			renderer: AlbumRenderer,
+			type: Album.type
 		};
 	}
 }
+
+Album.type = 'Album';
 
 export default Album;
