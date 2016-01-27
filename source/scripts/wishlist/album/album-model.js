@@ -1,5 +1,4 @@
 import WishlistItem from '../wishlist-item-model';
-
 import AlbumRenderer from './album.jsx';
 
 class Album extends WishlistItem {

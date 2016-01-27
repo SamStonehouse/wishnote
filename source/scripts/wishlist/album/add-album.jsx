@@ -1,4 +1,5 @@
 import '!style!css!sass!./add-album.sass';
+
 import React from 'react';
 
 import Album from './album-model.js';

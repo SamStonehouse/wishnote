@@ -1,3 +1,4 @@
+import '!style!css!sass!./wishlist-base.sass';
 import '!style!css!sass!./wishlist.sass';
 
 import React from 'react';
@@ -26,14 +27,22 @@ class Wishlist extends BackboneReact {
 	renderListItems() {
 		let listItems = [];
 
-		this.props.list.each(function(wish, i) {
+		this.props.list.each((wish, i) => {
 			let Renderer = wish.get('renderer');
 			listItems.push(
-				<Renderer key={i} model={ wish } />
+				<Renderer 
+					key={ i }
+					model={ wish }
+					className='wishlist-item'
+					onRemove={ this.remove.bind(this) } />
 			);
 		});
 
 		return listItems;
+	}
+
+	remove(model) {
+		this.props.list.remove(model);
 	}
 }
 

@@ -4,7 +4,6 @@ import GigRenderer from './gig.jsx';
 
 class Gig extends WishlistItem {
 	defaults() {
-		console.log(this);
 		return {
 			artist: 'Not specified',
 			cost: 0,

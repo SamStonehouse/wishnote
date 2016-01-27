@@ -1,4 +1,5 @@
 import '!style!css!sass!./add-gig.sass';
+
 import React from 'react';
 
 import Gig from './gig-model.js';
