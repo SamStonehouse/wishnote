@@ -1,10 +1,16 @@
 import WishlistItem from '../wishlist-item-model';
+
 import AlbumRenderer from './album.jsx';
 
 class Album extends WishlistItem {
 	defaults() {
 		return {
-			artist: 'Not specified',
+			name: 'Not specified',
+			spotifyAlbum: {
+				name: null,
+				images: [],
+				id: null
+			},
 			cost: 0,
 			renderer: AlbumRenderer,
 			type: Album.type

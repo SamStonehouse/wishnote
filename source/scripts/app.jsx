@@ -6,8 +6,6 @@ import Wishlist from './wishlist/wishlist.jsx';
 import AddAlbum from './wishlist/album/add-album.jsx';
 import AddGig from './wishlist/gig/add-gig.jsx';
 
-import SpotifyUtils from './utils/spotify/spotify-utils';
-
 let wishes = new WishlistCollection();
 wishes.fetch();
 
@@ -23,12 +21,6 @@ class App extends React.Component {
 	}
 
 	addItem(item) {
-		SpotifyUtils(item.get('artist')).then(function(artists) {
-			if (artists.length > 0) {
-				item.set({ spotifyArtist: artists[0] });
-				item.save();
-			}
-		});
 		wishes.add(item);
 		item.save();
 	}

@@ -2,6 +2,7 @@ import '!style!css!sass!./add-gig.sass';
 
 import React from 'react';
 
+import SpotifyUtils from '../../utils/spotify/spotify-utils';
 import Gig from './gig-model.js';
 
 class AddGig extends React.Component {
@@ -48,6 +49,13 @@ class AddGig extends React.Component {
 		this.setState({
 			artist: '',
 			cost: ''
+		});
+
+		SpotifyUtils.getArtistData(gig.get('artist')).then(function(artists) {
+			if (artists.length > 0) {
+				gig.set({ spotifyArtist: artists[0] });
+				gig.save();
+			}
 		});
 
 		this.props.onAdd(gig);

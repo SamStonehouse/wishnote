@@ -6,8 +6,10 @@ import _ from 'lodash';
 class Album extends React.Component {
 	render() {
 		return (
-			<div className={ 'album ' + this.props.className } >
-				{ this.props.model.get('artist') }
+			<div className={ 'album ' + this.props.className } style={ this.getTileStyle() }>
+				<p className='name'>{ this.props.model.get('name') }</p>
+				<p className='cost'> { this.props.model.get('cost') }</p>
+				<button onClick={ this.remove.bind(this) }>I got tickets!</button>
 				<button onClick={ this.remove.bind(this) }>Remove</button>
 			</div>
 		);
@@ -15,6 +17,17 @@ class Album extends React.Component {
 
 	remove() {
 		this.props.onRemove(this.props.model);
+	}
+
+	getTileStyle() {
+		const spotifyAlbum = this.props.model.get('spotifyAlbum');
+		if (spotifyAlbum && spotifyAlbum.images.length > 0) {
+			return {
+				backgroundImage: 'url(\'' + spotifyAlbum.images[0] + '\')'
+			};
+		}
+
+		return {};
 	}
 }
 
