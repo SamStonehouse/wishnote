@@ -8,8 +8,6 @@ import WishlistItem from './wishlist-item-model.js';
 
 const storage = new LocalStorage('wishnote-storage');
 
-
-
 class Wishlist extends BackboneMulticlass(WishlistItem, [Album, Gig]) {
 	constructor(options) {
 		super(options);

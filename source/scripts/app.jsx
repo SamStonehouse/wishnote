@@ -6,7 +6,7 @@ import Wishlist from './wishlist/wishlist.jsx';
 import AddAlbum from './wishlist/album/add-album.jsx';
 import AddGig from './wishlist/gig/add-gig.jsx';
 
-import SpotifyUtils from './utils/spotifty/spotify-utils';
+import SpotifyUtils from './utils/spotify/spotify-utils';
 
 let wishes = new WishlistCollection();
 wishes.fetch();
@@ -15,7 +15,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='app'>
-				<Wishlist list={ wishes } />
+				<Wishlist list={ wishes } onRemove={ this.removeItem } />
 				<AddAlbum list={ wishes } onAdd={ this.addItem } />
 				<AddGig list={ wishes } onAdd={ this.addItem } />
 			</div>
@@ -23,11 +23,20 @@ class App extends React.Component {
 	}
 
 	addItem(item) {
-		// SpotifyUtils(item.artist).then(function() {
-		// 	console.log('set image');
-		// });
+		SpotifyUtils(item.get('artist')).then(function(artists) {
+			if (artists.length > 0) {
+				item.set({ spotifyArtist: artists[0] });
+				item.save();
+			}
+		});
 		wishes.add(item);
 		item.save();
+	}
+
+	removeItem(item) {
+		// wishes.remove(item);
+		// wishes.sync();
+		item.destroy();
 	}
 }
 

@@ -6,6 +6,11 @@ class Gig extends WishlistItem {
 	defaults() {
 		return {
 			artist: 'Not specified',
+			spotifyArtist: {
+				name: null,
+				images: [],
+				id: null
+			},
 			cost: 0,
 			renderer: GigRenderer,
 			type: Gig.type

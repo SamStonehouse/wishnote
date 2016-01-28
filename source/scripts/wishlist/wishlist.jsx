@@ -2,6 +2,7 @@ import '!style!css!sass!./wishlist-base.sass';
 import '!style!css!sass!./wishlist.sass';
 
 import React from 'react';
+import _ from 'lodash';
 
 import WishlistCollection from './wishlist-model';
 import BackboneReact from '../utils/backbone-react';
@@ -30,7 +31,7 @@ class Wishlist extends BackboneReact {
 		this.props.list.each((wish, i) => {
 			let Renderer = wish.get('renderer');
 			listItems.push(
-				<Renderer 
+				<Renderer
 					key={ i }
 					model={ wish }
 					className='wishlist-item'
@@ -42,16 +43,18 @@ class Wishlist extends BackboneReact {
 	}
 
 	remove(model) {
-		this.props.list.remove(model);
+		this.props.onRemove(model);
 	}
 }
 
 Wishlist.defaultProps = {
-	list: new WishlistCollection()
+	list: new WishlistCollection(),
+	onRemove: _.noop
 };
 
 Wishlist.propTypes = {
-	list: React.PropTypes.instanceOf(WishlistCollection)
+	list: React.PropTypes.instanceOf(WishlistCollection),
+	onRemove: React.PropTypes.func
 };
 
 export default Wishlist;
