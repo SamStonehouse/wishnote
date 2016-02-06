@@ -28,6 +28,10 @@ module.exports = {
         test: /\.sass$/,
         loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
       },
+      // { 
+      //   test: /\.(png|jpg)$/, 
+      //   loader: 'file?limit=8192'
+      // },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',

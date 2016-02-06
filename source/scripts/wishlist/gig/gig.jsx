@@ -10,19 +10,9 @@ class Gig extends React.Component {
 				<p className='artist'>{ this.props.model.get('artist') }</p>
 				<p className='cost'> { this.props.model.get('cost') }</p>
 				<button onClick={ this.remove.bind(this) }>I got tickets!</button>
-				<button onClick={ this.remove.bind(this) }>Remove</button>
+				<button className='clear-button' onClick={ this.remove.bind(this) }>Remove</button>
 			</div>
 		);
-	}
-
-	getImageUrls() {
-		const spotifyArtist = this.props.model.get('spotifyArtist');
-
-		if (spotifyArtist) {
-			return spotifyArtist.images.join(' ');
-		}
-
-		return '';
 	}
 
 	getTileStyle() {

@@ -10,7 +10,7 @@ class Album extends React.Component {
 				<p className='name'>{ this.props.model.get('name') }</p>
 				<p className='cost'> { this.props.model.get('cost') }</p>
 				<button onClick={ this.remove.bind(this) }>I got tickets!</button>
-				<button onClick={ this.remove.bind(this) }>Remove</button>
+				<button className='clear-button' onClick={ this.remove.bind(this) }>Remove</button>
 			</div>
 		);
 	}

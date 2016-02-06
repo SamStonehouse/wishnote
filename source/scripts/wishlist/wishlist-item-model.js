@@ -11,6 +11,7 @@ class WishlistItem extends Backbone.Model {
 		super(options);
 		this.localStorage = storage;
 	}
+	
 	defaults() {
 		return {
 			test: 'Wishlist item test',
